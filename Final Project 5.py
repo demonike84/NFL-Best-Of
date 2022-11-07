@@ -6,9 +6,7 @@
 
 # pip install matplotlib
 # pip install pandas
-# pip install numpy
-# pip install openpyxl
-# pip install ipywidgets
+
 
 
 # In[1]:
@@ -16,7 +14,7 @@
 
 import matplotlib.pyplot as plt
 import pandas as pd
-import numpy as np
+
 
 #Pull Data from Spreadsheet
 Receiving = pd.read_excel('assets/Receiving.xlsx', sheet_name = 'Receiving_Data')
