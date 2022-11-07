@@ -63,21 +63,33 @@ while True:
 # In[5]:
 
 #Pull input from user to create charts
-Receiver = Receiving[Receiving['Name'].str.contains(Look)]
+Choice = Receiving[Receiving['Name'].str.contains(Look)]
+Best = Receiving[Receiving['Name'].str.contains('Rice, Jerry')]
 
 
 # In[6]:
 
-#Name Stats from excel sheet
-Played = Receiver['Games Played']
-Over40 = Receiver['Receptions Longer than 40 Yards']
-Year = Receiver['Year']
-First = Receiver['First Down Receptions']
-YardsYear = Receiver['Receiving Yards']
-GamesPlayed = Receiver['Games Played']
-Rec = Receiver['Receptions']
-Yr = Receiver['Year']
-Lost = Receiver['Fumbles']
+#Choice Stats from excel sheet
+Played = Choice['Games Played']
+Over40 = Choice['Receptions Longer than 40 Yards']
+Year = Choice['Year']
+First = Choice['First Down Receptions']
+YardsYear = Choice['Receiving Yards']
+GamesPlayed = Choice['Games Played']
+Rec = Choice['Receptions']
+Yr = Choice['Year']
+Lost = Choice['Fumbles']
+
+#Choice Stats from excel sheet
+BPlayed = Best['Games Played']
+BOver40 = Best['Receptions Longer than 40 Yards']
+BYear = Best['Year']
+BFirst = Best['First Down Receptions']
+BYardsYear = Best['Receiving Yards']
+BGamesPlayed = Best['Games Played']
+BRec = Best['Receptions']
+BYr = Best['Year']
+BLost = Best['Fumbles']
 
 
 # In[7]:
@@ -86,7 +98,7 @@ Lost = Receiver['Fumbles']
 plt.figure(figsize = (15, 6))
 plt.bar(Yr, Over40)
 plt.xlabel("Catches over 40 Yards")
-plt.show()
+#plt.show()
 
 
 # In[8]:
@@ -95,7 +107,7 @@ plt.show()
 plt.figure(figsize = (15, 6))
 plt.plot(Yr, YardsYear)
 plt.xlabel("Receiving Yards per Year")
-plt.show()
+#plt.show()
 
 
 # In[9]:
@@ -104,11 +116,10 @@ plt.show()
 plt.figure(figsize = (15, 6))
 plt.bar(Yr, Lost)
 plt.xlabel("Fumbles lost per Year")
-plt.show()
+#plt.show()
 
 
 # In[ ]:
 
 
-
-
+print("Have a good day!")
