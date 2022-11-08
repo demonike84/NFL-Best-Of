@@ -30,7 +30,7 @@ Receivers = [Receiving2['Name'].unique().tolist()]
 AllReceivers = (Receiving['Name'].tolist())
 
 
-
+print(Receiving.dtypes)
 # In[2]:
 
 # In[3]:
@@ -95,19 +95,42 @@ BLost = Best['Fumbles']
 # In[7]:
 
 #Plot Tables
-plt.figure(figsize = (15, 6))
-plt.bar(Yr, Over40)
-plt.xlabel("Catches over 40 Yards")
+#plt.figure(figsize = (15, 6))
+#plt.bar(Yr, Over40)
+#plt.xlabel("Catches over 40 Yards")
 #plt.show()
 
 
 # In[8]:
 
 
-plt.figure(figsize = (15, 6))
-plt.plot(Yr, YardsYear)
+fig, axis = plt.subplots(2,2)
+fig.suptitle("Who's the Best?")
+
+#plt.figure(figsize = (15, 6))
+
+axis[0, 0].plot(BYr, BYardsYear)
+axis[0, 0].set_title("Jerry Rice")
+
+axis[0, 1].plot(Yr, YardsYear)
+axis[0, 1].set_title(Look)
+
+axis[1, 0].plot(BYr, BOver40)
+#axis[1, 0].set_title("Catches over 40 Yards")
+
+axis[1, 1].plot(Yr, Over40)
+#axis[1, 1].set_title("Cosine Function")
+
+
+
+#plt.subplot(1, 1)
+#plt.subplot(BYr, BYardsYear)
+
+#plt.subplot(2, 2)
+#plt.subplot(Yr, YardsYear)
+
 plt.xlabel("Receiving Yards per Year")
-#plt.show()
+plt.show()
 
 
 # In[9]:
