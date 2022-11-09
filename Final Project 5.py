@@ -30,7 +30,7 @@ Receivers = [Receiving2['Name'].unique().tolist()]
 AllReceivers = (Receiving['Name'].tolist())
 
 
-print(Receiving.dtypes)
+#print(Receiving.dtypes)
 # In[2]:
 
 # In[3]:
@@ -60,12 +60,20 @@ while True:
         print("Not in List, Try again")
 
 
+a = Look.split(',', 1)
+b = a[1].split(',',1)
+#GivenName = b[0]+' '+a[0]
+
+#print(a)
+#print([b]," ",[a])
+
 # In[5]:
 
 #Pull input from user to create charts
 Choice = Receiving[Receiving['Name'].str.contains(Look)]
 Best = Receiving[Receiving['Name'].str.contains('Rice, Jerry')]
-
+YourPlayer = (Look.split(',')[1],Look.split(',')[0])
+Chosen = ' '.join(YourPlayer)
 
 # In[6]:
 
@@ -106,14 +114,17 @@ BLost = Best['Fumbles']
 
 fig, axis = plt.subplots(2,2)
 fig.suptitle("Who's the Best?")
+fig.supxlabel("Yours on the Right")
+fig.set_rasterized(10)
 
 #plt.figure(figsize = (15, 6))
 
 axis[0, 0].plot(BYr, BYardsYear)
 axis[0, 0].set_title("Jerry Rice")
+axis[0, 0]
 
 axis[0, 1].plot(Yr, YardsYear)
-axis[0, 1].set_title(Look)
+axis[0, 1].set_title(Chosen)
 
 axis[1, 0].plot(BYr, BOver40)
 #axis[1, 0].set_title("Catches over 40 Yards")
@@ -121,15 +132,13 @@ axis[1, 0].plot(BYr, BOver40)
 axis[1, 1].plot(Yr, Over40)
 #axis[1, 1].set_title("Cosine Function")
 
-
-
 #plt.subplot(1, 1)
 #plt.subplot(BYr, BYardsYear)
 
 #plt.subplot(2, 2)
 #plt.subplot(Yr, YardsYear)
 
-plt.xlabel("Receiving Yards per Year")
+#plt.ylabel("Receiving Yards per Year")
 plt.show()
 
 
@@ -138,7 +147,7 @@ plt.show()
 
 plt.figure(figsize = (15, 6))
 plt.bar(Yr, Lost)
-plt.xlabel("Fumbles lost per Year")
+#plt.xlabel("Fumbles lost per Year")
 #plt.show()
 
 
